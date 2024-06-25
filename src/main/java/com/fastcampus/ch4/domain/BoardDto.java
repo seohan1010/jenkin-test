@@ -12,8 +12,7 @@ public class BoardDto {
     private Date    reg_date;
 
 
-    // 인스턴스화된 객체와 넘겨받은 객체가 같은 객체이고, 넘겨받은 객체가 null이 아니고, 해당 객체의 클래스와 넘겨받은 객체의
-    // 클래스가 같은 클래스일 경우 if문 아래의 코드가 실행되게 된다.
+ 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
