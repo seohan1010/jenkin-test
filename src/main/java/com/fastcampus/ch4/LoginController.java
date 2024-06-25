@@ -42,7 +42,7 @@ public class LoginController {
   
         if(!loginCheck(id, pwd)) {
         
-            String msg = URLEncoder.encode("id 또는 pwd가 일치하지 않습니다.", "utf-8");
+            String msg = "";
 
             return "redirect:/login/login?msg="+msg;
         }
