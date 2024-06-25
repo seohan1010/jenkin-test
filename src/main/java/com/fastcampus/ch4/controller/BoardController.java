@@ -30,7 +30,7 @@ public class BoardController {
     @GetMapping("/list")
     public String list(Integer page, Integer pageSize, Model m, HttpServletRequest request) {
         if (!loginCheck(request))
-            return "redirect:/login/login?toURL=" + request.getRequestURL();  // 로그인을 안했으면 로그인 화면으로 이동
+            return "redirect:/login/login?toURL=" + request.getRequestURL();  
 
             if(page==null)page=1;
             if(pageSize==null)pageSize=10;
@@ -52,7 +52,7 @@ public class BoardController {
         }
 
 
-        return "boardList"; // 로그인을 한 상태이면, 게시판 화면으로 이동
+        return "boardList";
     }
 
     private boolean loginCheck(HttpServletRequest request) {
