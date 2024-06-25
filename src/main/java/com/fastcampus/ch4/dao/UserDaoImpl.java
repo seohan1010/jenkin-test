@@ -22,15 +22,13 @@ public class UserDaoImpl implements UserDao {
         int rowCnt = 0;
         String sql = "DELETE FROM user_info WHERE id= ? ";
 
-        try (  // try-with-resources - since jdk7
+        try (  
                Connection conn = ds.getConnection();
                PreparedStatement pstmt = conn.prepareStatement(sql);
         ) {
             pstmt.setString(1, id);
             return pstmt.executeUpdate(); //  insert, delete, update
-//      } catch (Exception e) {
-//          e.printStackTrace();
-//          throw e;
+
         }
     }
 
@@ -70,7 +68,7 @@ public class UserDaoImpl implements UserDao {
 
         try (
                 Connection conn = ds.getConnection();
-                PreparedStatement pstmt = conn.prepareStatement(sql); // SQL Injection공격, 성능향상
+                PreparedStatement pstmt = conn.prepareStatement(sql); 
         ) {
             pstmt.setString(1, user.getId());
             pstmt.setString(2, user.getPwd());
